@@ -6,7 +6,6 @@
 #include <iostream>
 #include <string>
 
-//Form() : _isSigned(false), _name("Default"), _gradeToSign(1), _gradeToExecute(1)
 
 class Form
 {
