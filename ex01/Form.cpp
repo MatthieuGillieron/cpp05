@@ -6,16 +6,15 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:11:49 by mg                #+#    #+#             */
-/*   Updated: 2025/12/04 10:00:53 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/04 11:12:41 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-
 // === CANONICAL ===
 
-Form::Form() : _isSigned(false), _name("Default"), _gradeToSign(1), _gradeToExecute(1)
+Form::Form() : _name("Default"), _gradeToSign(1), _gradeToExecute(1),  _isSigned(false)
 {};
 
 Form::Form(const std::string& name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
@@ -32,7 +31,9 @@ Form::Form(const std::string& name, int gradeToSign, int gradeToExecute) : _name
 	
 };
 
-Form::Form(const Form& val) : _gradeToSign(val._gradeToSign), _gradeToExecute(val._gradeToExecute) {};
+Form::Form(const Form& val) : _name(val._name),  _gradeToSign(val._gradeToSign),
+			_gradeToExecute(val._gradeToExecute), _isSigned(val._isSigned)
+{};
 
 Form::~Form()
 {};
@@ -58,4 +59,45 @@ int Form::getGradeToExecute() const { return _gradeToExecute; }
 
 bool Form::getIsSigned() const { return _isSigned; }
 
+
+
+// === METHODE ===
+
+void Form::beSigned(const Bureaucrat& b)
+{
+	if (b.getGrade() <= this->getGradeToSign())
+	{
+		_isSigned = true;
+	}
+	else
+		throw Form::GradeTooLowException();
+
+}
+
+
+
+// === EXCEPTIONS ===
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high!");
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low!");
+}
+
+
+
+// === OPERATOR ===
+
+std::ostream& operator<<(std::ostream& os, const Form& f)
+	{
+		os << "name: " <<  f.getName() << "\n"
+		<< " - sign grade: " << f.getGradeToSign() << "\n"
+		<< " - execute grade: " << f.getGradeToExecute() << "\n"
+		<< " - is signed: " << f.getIsSigned() << "\n";
+		return os;
+	}
 
