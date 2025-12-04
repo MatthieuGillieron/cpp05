@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:43:11 by mg                #+#    #+#             */
-/*   Updated: 2025/12/01 16:51:53 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/04 11:40:11 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,27 @@ void Bureaucrat::decrementGrade()
 	else
 		throw GradeTooLowException();
 }
+
+
+
+// === METHODE 	===
+
+void Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+
+	catch (std::exception& e)
+	{
+		std::cout << this->getName() << " couldn't sign " 
+		<< form.getName() << " because " << e.what() << std::endl;
+	}
+	
+}
+
 
 
 
