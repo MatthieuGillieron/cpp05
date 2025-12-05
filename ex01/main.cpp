@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:41:55 by mg                #+#    #+#             */
-/*   Updated: 2025/12/02 12:46:25 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/05 21:03:45 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,50 +43,35 @@ int main()
 
 
 
-    std::cout << "\n=== Increment/decrement valides ===" << std::endl;
+    std::cout << "\n=== signature valides ===" << std::endl;
     try
 	{
-		bob.decrementGrade();
-        std::cout << bob << std::endl;
+		Bureaucrat bob("bob", 1);
+		Form formA("FormA", 10, 12);
+
+		bob.signForm(formA);
+        std::cout << "\n" << formA << std::endl;
     }
 	
 	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
     }
-	try
+
+
+    std::cout << "\n=== signature invalides ===" << std::endl;
+    try
 	{
-		jack.incrementGrade();
-		std::cout << jack << std::endl;
-	}
-	catch (std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+		Bureaucrat boby("boby", 10);
+    	Form formB("FormB", 8, 4);
+
+		boby.signForm(formB);
+        std::cout << "\n" << formB << std::endl;
+
+       
+        std::cout << boby << std::endl;
+    }
 	
-
-    std::cout << "\n=== Increment/decrement invalides ===" << std::endl;
-    try
-	{
-        bob.incrementGrade();
-        std::cout << bob << std::endl;
-
-        bob.incrementGrade();
-        std::cout << bob << std::endl;
-    }
-	catch (std::exception& e)
-	{
-        std::cout << e.what() << std::endl;
-    }
-
-    try
-	{
-        jack.decrementGrade();
-        std::cout << jack << std::endl;
-
-        jack.decrementGrade();
-        std::cout << jack << std::endl;
-    }
 	catch (std::exception& e)
 	{
         std::cout << e.what() << std::endl;
