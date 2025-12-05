@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:41:55 by mg                #+#    #+#             */
-/*   Updated: 2025/12/05 21:03:45 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/05 21:06:06 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int main()
 {
     std::cout << "=== Constructeurs valides ===" << std::endl;
-    Bureaucrat bob("Bob", 1);
+    Bureaucrat sparrow("Sparrow", 1);
     Bureaucrat jack("Jack", 150);
 
-    std::cout << bob << std::endl;
+    std::cout << sparrow << std::endl;
     std::cout << jack << std::endl;
 
 
