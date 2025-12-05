@@ -6,11 +6,13 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:41:55 by mg                #+#    #+#             */
-/*   Updated: 2025/12/05 21:06:06 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/05 21:13:14 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+
 
 int main()
 {
@@ -48,6 +50,9 @@ int main()
 	{
 		Bureaucrat bob("bob", 1);
 		Form formA("FormA", 10, 12);
+		
+		std::cout << formA << std::endl;
+
 
 		bob.signForm(formA);
         std::cout << "\n" << formA << std::endl;
@@ -65,11 +70,15 @@ int main()
 		Bureaucrat boby("boby", 10);
     	Form formB("FormB", 8, 4);
 
+		std::cout << formB << std::endl;
+	
+	
 		boby.signForm(formB);
+		std ::cout << boby << std::endl;
+
         std::cout << "\n" << formB << std::endl;
 
        
-        std::cout << boby << std::endl;
     }
 	
 	catch (std::exception& e)
