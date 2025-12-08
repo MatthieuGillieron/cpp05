@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:11:49 by mg                #+#    #+#             */
-/*   Updated: 2025/12/08 13:33:16 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/08 13:47:17 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,15 @@ void AForm::beSigned(const Bureaucrat& b)
 
 void AForm::checkExecuteRequirements(Bureaucrat const & executor) const
 {
-	
-// Doit faire :
-//  - si _isSigned == false → throw
-//  - si executor.grade > _gradeToExecute → throw
+	if (AForm::getIsSigned() == false)
+	{
+		throw GradeTooLowException();
+	}
 
-
-
-
+	else if (executor.getGrade() > getGradeToExecute())
+	{
+		throw GradeTooLowException();
+	}
 }
 
 
