@@ -8,7 +8,7 @@ class Bureaucrat;
 #include <string>
 
 
-class Form
+class AForm
 {
 
 	private:
@@ -20,11 +20,11 @@ class Form
 
 	public:
 
-		Form();
-		Form(const std::string& name, int gradeToSign, int gradeToExecute);
-		Form(const Form&);
-		~Form();
-		Form& operator=(const Form&);
+		AForm();
+		AForm(const std::string& name, int gradeToSign, int gradeToExecute);
+		AForm(const AForm&);
+		~AForm();
+		AForm& operator=(const AForm&);
 
 		const std::string& getName() const;
 		bool getIsSigned() const;
@@ -49,6 +49,6 @@ class Form
 		virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
-	std::ostream& operator<<(std::ostream& os, const Form& f);
+	std::ostream& operator<<(std::ostream& os, const AForm& f);
 
 #endif

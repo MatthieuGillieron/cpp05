@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:11:49 by mg                #+#    #+#             */
-/*   Updated: 2025/12/06 19:40:10 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/08 13:29:03 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,21 @@ void Form::beSigned(const Bureaucrat& b)
 		throw Form::GradeTooLowException();
 
 }
+
+
+void AForm::checkExecuteRequirements(Bureaucrat const & executor) const
+{
+	
+// Doit faire :
+//  - si _isSigned == false → throw
+//  - si executor.grade > _gradeToExecute → throw
+
+
+
+
+}
+
+
 
 
 
