@@ -2,7 +2,7 @@
 
 ### AForm
 
-[ ] Rendre AForm abstraite -> ``` virtual void execute(Bureaucrat const & executor) const = 0; ```
+[x] Rendre AForm abstraite -> ``` virtual void execute(Bureaucrat const & executor) const = 0; ```
 Rendre AForm virtuel
 
 [ ] Ajouter methode Aform -> ``` void checkExecuteRequirements(Bureaucrat const & executor) const; ```
