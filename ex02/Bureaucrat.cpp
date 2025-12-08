@@ -6,12 +6,12 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 10:43:11 by mg                #+#    #+#             */
-/*   Updated: 2025/12/04 11:40:11 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/08 13:36:34 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
+#include "AForm.hpp"
 
 // === CANONICAL FORM / OPERATOR ===
 
@@ -75,7 +75,7 @@ void Bureaucrat::decrementGrade()
 
 // === METHODE 	===
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signForm(AForm& form)
 {
 	try
 	{
