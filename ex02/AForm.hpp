@@ -45,7 +45,7 @@ class Form
 				virtual const char* what() const throw();
 		};
 
-
+		virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
 	std::ostream& operator<<(std::ostream& os, const Form& f);
