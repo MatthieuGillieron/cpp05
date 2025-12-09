@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:35:19 by mg                #+#    #+#             */
-/*   Updated: 2025/12/09 09:46:24 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/09 10:45:41 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,35 +33,15 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	std::string nameFile = _target + "_shrubbery";
 	std::ofstream file(nameFile);
 
-	file << "       /\\\n";
-	file << "      /  \\\n";
-	file << "     /____\\\n";
-	file << "    /\\    /\\\n";
-	file << "   /  \\  /  \\\n";
-	file << "  /____\\/____\\\n";
+	file << "        *	\n";
+	file << "       /-\\\n";
+	file << "      /_*_\\\n";
+	file << "     /*-_*_\\\n";
+	file << "    /*__-_*_\\\n";
+	file << "   /-_*__*_-_\\\n";
+	file << "  /_-_*_-__*-_\\\n";
 	file << "       ||\n";
 	file << "       ||\n";
 	file << "       ||\n\n";
 
-	file << "      /\\\n";
-	file << "     /  \\\n";
-	file << "    /    \\\n";
-	file << "   /______\\\n";
-	file << "  /\\      /\\\n";
-	file << " /  \\    /  \\\n";
-	file << "/____\\__/____\\\n";
-	file << "      ||\n";
-	file << "      ||\n";
-	file << "      ||\n\n";
-
-	file << "        /\\\n";
-	file << "       /  \\\n";
-	file << "      /    \\\n";
-	file << "     /______\\\n";
-	file << "    /\\      /\\\n";
-	file << "   /  \\    /  \\\n";
-	file << "  /____\\__/____\\\n";
-	file << "        ||\n";
-	file << "        ||\n";
-	file << "        ||\n";
 }
