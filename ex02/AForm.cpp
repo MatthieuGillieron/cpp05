@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 15:11:49 by mg                #+#    #+#             */
-/*   Updated: 2025/12/08 13:47:17 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/09 10:35:19 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void AForm::checkExecuteRequirements(Bureaucrat const & executor) const
 {
 	if (AForm::getIsSigned() == false)
 	{
-		throw GradeTooLowException();
+		throw FormNotSigned();
 	}
 
 	else if (executor.getGrade() > getGradeToExecute())
@@ -104,6 +104,11 @@ const char* AForm::GradeTooHighException::what() const throw()
 const char* AForm::GradeTooLowException::what() const throw()
 {
 	return ("Grade too low!");
+}
+
+const char* AForm::FormNotSigned::what() const throw()
+{
+	return ("Form not signed!");
 }
 
 
