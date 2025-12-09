@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:35:19 by mg                #+#    #+#             */
-/*   Updated: 2025/12/09 10:51:01 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/09 13:46:31 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,21 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
  : AForm("ShrubberyCreationForm", 145, 137),  _target(target)
 {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& val) : AForm(val)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& val) : AForm(val), _target(val._target)
 {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {}
+
+ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other)
+{
+	if (this != &other)
+	{
+		_target = other._target;
+	}
+	return (*this);
+}
+
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
