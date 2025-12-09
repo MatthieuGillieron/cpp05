@@ -6,7 +6,7 @@
 /*   By: mg <mg@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 15:35:19 by mg                #+#    #+#             */
-/*   Updated: 2025/12/09 10:45:41 by mg               ###   ########.fr       */
+/*   Updated: 2025/12/09 10:51:01 by mg               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	checkExecuteRequirements(executor);
 	std::string nameFile = _target + "_shrubbery";
 	std::ofstream file(nameFile);
+
+	if (!file.is_open())
+	    throw std::runtime_error("Cannot create shrubbery file");
+
 
 	file << "        *	\n";
 	file << "       /-\\\n";
