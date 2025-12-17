@@ -2,7 +2,9 @@
 #ifndef INTERN_HPP
 #define INTERN_HPP
 
-#include "AForm.hpp"
+#include <string>
+
+class AForm;
 
 class Intern
 {
